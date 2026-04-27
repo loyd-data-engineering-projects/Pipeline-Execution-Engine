@@ -1,10 +1,6 @@
 ```
 DOCUMENTATION GENERATION PROMPT TEMPLATE
 
-Use this prompt whenever you want to create a structured bash/CMD/PowerShell documentation guide.
-
-PROMPT
-
 Create a bash-style documentation using the format below.
 
 Follow the exact structure, spacing, and visual style.
