@@ -43,3 +43,17 @@ backend/
   tests/
   config/
 ```
+---
+```
+• FastAPI Setup & Installation
+• API Request Methods
+• Project 1 - FastAPI Request Method Logic
+• Project 3: Complete RESTful APIs
+• Setup Database
+• Large Production Database Setup
+• Project 3.5 - Alembic Data Migration
+• Project 4 - Unit & Integration Testing
+• Deploying FastAPI Applications
+• Authentication & Authorization (optional)
+• Authenticate Requests (optional)
+```
