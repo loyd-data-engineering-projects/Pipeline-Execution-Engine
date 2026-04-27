@@ -1,7 +1,7 @@
 ```sh
 # step1
-mkdir dataflow-orchestrator
-cd dataflow-orchestrator
+mkdir Pipeline-Execution-Engine
+cd Pipeline-Execution-Engine
 
 #step2
 python -m venv venv
