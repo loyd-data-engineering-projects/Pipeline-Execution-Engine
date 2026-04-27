@@ -1,3 +1,4 @@
+: <<'FASTAPI_SETUP'
 (venv) C:\pipeline\Pipeline-Execution-Engine>pip list
 Package           Version
 ----------------- -------
