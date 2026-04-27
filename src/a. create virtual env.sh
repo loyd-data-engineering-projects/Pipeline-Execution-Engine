@@ -4,17 +4,27 @@ VIRTUAL ENVIRONMENT SETUP (CMD)
 ========================================
 
 IMPORTANT CONTEXT
-• Always start from a known location (e.g. Desktop or Users folder)
-• Project folder defines where everything will be created
+• You must choose a location first (Desktop, Documents, Projects folder, etc.)
+• A project folder is created INSIDE your current location
+• Everything (code + venv) will live inside that project folder
 
 
-STEP 1 — CREATE PROJECT DIRECTORY
+STEP 1 — CREATE PROJECT DIRECTORY (FOLDER SETUP)
 • mkdir Pipeline-Execution-Engine
 • cd Pipeline-Execution-Engine
+
+WHAT THIS MEANS
+• mkdir = creates a new folder in your CURRENT location
+• cd = moves you inside that folder
+• This folder becomes your project workspace
 
 
 STEP 2 — CREATE VIRTUAL ENVIRONMENT
 • python -m venv venv
+
+WHAT THIS DOES
+• Creates a folder named "venv" inside your project folder
+• This contains isolated Python environment files
 
 
 STEP 3 — ACTIVATE VIRTUAL ENVIRONMENT
@@ -25,13 +35,13 @@ NOTES
 • Uses Windows Command Prompt (CMD)
 • Uses backslash path format (\)
 • Activation file is .bat
-• No need for ".\" prefix
-• venv is created INSIDE the project folder
+• venv is always created inside the project folder
 
 
-COMMON MISTAKE
+COMMON MISTAKES
 • Running commands from wrong directory (e.g. System32)
-• Result: "file not found"
+• Forgetting where the project folder was created
+• Trying to activate venv outside the project folder
 CMD_ENV
 
 --------------------------------------------------------
@@ -42,17 +52,27 @@ VIRTUAL ENVIRONMENT SETUP (POWERSHELL)
 ========================================
 
 IMPORTANT CONTEXT
-• Always ensure you are inside the project directory
-• PowerShell requires explicit path reference (".\")
+• You must first be inside a chosen location (Desktop, Documents, Projects, etc.)
+• The project folder is created in that location
+• All environment files live inside that folder
 
 
-STEP 1 — CREATE PROJECT DIRECTORY
+STEP 1 — CREATE PROJECT DIRECTORY (FOLDER SETUP)
 • mkdir Pipeline-Execution-Engine
 • cd Pipeline-Execution-Engine
+
+WHAT THIS MEANS
+• mkdir = creates a new folder in your CURRENT location
+• cd = enters that folder
+• This folder becomes the root of your project
 
 
 STEP 2 — CREATE VIRTUAL ENVIRONMENT
 • python -m venv venv
+
+WHAT THIS DOES
+• Creates a folder named "venv" inside the project folder
+• Contains isolated Python interpreter + dependencies
 
 
 STEP 3 — ACTIVATE VIRTUAL ENVIRONMENT
@@ -64,16 +84,16 @@ NOTES
 • Requires explicit current directory prefix ".\"
 • Activation file is .ps1
 • More strict execution rules than CMD
-• venv is created INSIDE the project folder
+• venv is always inside the project folder
 
 
-COMMON MISTAKE
+COMMON MISTAKES
 • Forgetting ".\" prefix
 • Running from wrong directory (e.g. System32)
-• Script fails due to path resolution
+• Losing track of where project folder was created
 PS_ENV
 
-----------------------------------------------
+--------------------------------------------------------
 
 : <<'RULE'
 ========================================
@@ -83,28 +103,29 @@ CMD vs POWERSHELL MENTAL MODEL
 CMD
 • Activation: venv\Scripts\activate.bat
 • Path style: backslash (\)
-• Less strict about execution context
+• Simpler execution rules
 
 
 POWERSHELL
 • Activation: .\venv\Scripts\Activate.ps1
 • Requires explicit current directory (.\)
-• More strict execution rules
+• More strict about script execution
 
 
-CORE RULE
-• venv is ALWAYS inside project folder
-• You must be in the correct directory before:
-  • activating venv
-  • deleting venv
-  • installing packages
+CORE RULE (VERY IMPORTANT)
+• You ALWAYS start by choosing a location (Desktop, Documents, etc.)
+• THEN you create a project folder there
+• THEN everything else happens inside that folder
 
 
-MENTAL MODEL
-• Project folder = root of environment state
-• venv = isolated Python world inside that folder
-• Terminal = runtime state holder
+FINAL MENTAL MODEL
+• Location (Desktop/Documents) = starting point
+• Project folder = workspace container
+• venv = isolated Python system inside workspace
+• Terminal = active runtime environment
+
+
+CRITICAL SAFETY RULE
+• Never assume where your project folder is
+• Always verify current directory before activating or deleting venv
 RULE
-
-
-
