@@ -22,3 +22,24 @@
   • Add basic authentication (API key)
   • Apply clean architecture
 ```
+---
+```
+backend/
+  api/
+    routes/
+    controllers/
+  core/
+    orchestrator/
+    pipeline/
+      extract/
+      validate/
+      transform/
+      load/
+  models/
+  storage/
+  db/
+  workers/
+  monitor/
+  tests/
+  config/
+```
