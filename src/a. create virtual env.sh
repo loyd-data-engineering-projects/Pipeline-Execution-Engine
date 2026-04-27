@@ -1,131 +1,83 @@
-: <<'CMD_ENV'
+: <<'VENV_SETUP'
 ========================================
-VIRTUAL ENVIRONMENT SETUP (CMD)
+PROPER VIRTUAL ENVIRONMENT SETUP
 ========================================
 
-IMPORTANT CONTEXT
-• You must choose a location first (Desktop, Documents, Projects folder, etc.)
-• A project folder is created INSIDE your current location
-• Everything (code + venv) will live inside that project folder
+PURPOSE
+• Create a safe Python project environment
+• Keep dependencies isolated per project
 
 
-STEP 1 — CREATE PROJECT DIRECTORY (FOLDER SETUP)
+STEP 1 — CHOOSE SAFE WORKING LOCATION
+• cd C:\Users\YourName
+OR
+• cd Desktop
+OR
+• cd Documents
+
+This ensures you are NOT in system directories.
+
+
+STEP 2 — CREATE PROJECT FOLDER
 • mkdir Pipeline-Execution-Engine
 • cd Pipeline-Execution-Engine
 
-WHAT THIS MEANS
-• mkdir = creates a new folder in your CURRENT location
-• cd = moves you inside that folder
-• This folder becomes your project workspace
+This becomes your project workspace.
 
 
-STEP 2 — CREATE VIRTUAL ENVIRONMENT
+STEP 3 — CREATE VIRTUAL ENVIRONMENT
 • python -m venv venv
 
-WHAT THIS DOES
-• Creates a folder named "venv" inside your project folder
-• This contains isolated Python environment files
+This creates:
+• venv/ (isolated Python environment)
 
 
-STEP 3 — ACTIVATE VIRTUAL ENVIRONMENT
+STEP 4 — ACTIVATE VIRTUAL ENVIRONMENT
+
+CMD:
 • venv\Scripts\activate.bat
 
-
-NOTES
-• Uses Windows Command Prompt (CMD)
-• Uses backslash path format (\)
-• Activation file is .bat
-• venv is always created inside the project folder
-
-
-COMMON MISTAKES
-• Running commands from wrong directory (e.g. System32)
-• Forgetting where the project folder was created
-• Trying to activate venv outside the project folder
-CMD_ENV
-
---------------------------------------------------------
-
-: <<'PS_ENV'
-========================================
-VIRTUAL ENVIRONMENT SETUP (POWERSHELL)
-========================================
-
-IMPORTANT CONTEXT
-• You must first be inside a chosen location (Desktop, Documents, Projects, etc.)
-• The project folder is created in that location
-• All environment files live inside that folder
-
-
-STEP 1 — CREATE PROJECT DIRECTORY (FOLDER SETUP)
-• mkdir Pipeline-Execution-Engine
-• cd Pipeline-Execution-Engine
-
-WHAT THIS MEANS
-• mkdir = creates a new folder in your CURRENT location
-• cd = enters that folder
-• This folder becomes the root of your project
-
-
-STEP 2 — CREATE VIRTUAL ENVIRONMENT
-• python -m venv venv
-
-WHAT THIS DOES
-• Creates a folder named "venv" inside the project folder
-• Contains isolated Python interpreter + dependencies
-
-
-STEP 3 — ACTIVATE VIRTUAL ENVIRONMENT
+PowerShell:
 • .\venv\Scripts\Activate.ps1
 
 
-NOTES
-• Uses PowerShell terminal (PS C:\>)
-• Requires explicit current directory prefix ".\"
-• Activation file is .ps1
-• More strict execution rules than CMD
-• venv is always inside the project folder
+--------------------------------------------------------
+WARNINGS / COMMON MISTAKES
+--------------------------------------------------------
+• NEVER create projects in System32
+• ALWAYS confirm location before running mkdir
+• venv must be inside the project folder
+• Activating venv outside project folder will fail
+• Forgetting current directory leads to “file not found”
+• Each project must have its own venv
 
 
-COMMON MISTAKES
-• Forgetting ".\" prefix
-• Running from wrong directory (e.g. System32)
-• Losing track of where project folder was created
-PS_ENV
+VENV_SETUP
 
 --------------------------------------------------------
 
 : <<'RULE'
 ========================================
-CMD vs POWERSHELL MENTAL MODEL
+CORE DEVELOPMENT MENTAL MODEL
 ========================================
 
-CMD
-• Activation: venv\Scripts\activate.bat
-• Path style: backslash (\)
-• Simpler execution rules
+• Your CURRENT DIRECTORY determines everything
+• mkdir creates folders in CURRENT DIRECTORY
+• cd only changes location (does NOT create anything)
+• venv is ALWAYS inside a project folder
+• Project folder defines the entire environment boundary
 
+SAFE WORKFLOW
+• Choose location (Users / Desktop / Documents)
+• Create project folder
+• Enter folder
+• Create venv inside it
+• Activate venv inside same folder
 
-POWERSHELL
-• Activation: .\venv\Scripts\Activate.ps1
-• Requires explicit current directory (.\)
-• More strict about script execution
-
-
-CORE RULE (VERY IMPORTANT)
-• You ALWAYS start by choosing a location (Desktop, Documents, etc.)
-• THEN you create a project folder there
-• THEN everything else happens inside that folder
-
-
-FINAL MENTAL MODEL
-• Location (Desktop/Documents) = starting point
-• Project folder = workspace container
-• venv = isolated Python system inside workspace
-• Terminal = active runtime environment
-
-
-CRITICAL SAFETY RULE
-• Never assume where your project folder is
-• Always verify current directory before activating or deleting venv
+CRITICAL RULE
+• If you don’t know your current directory, STOP and run:
+  cd
 RULE
+
+
+
